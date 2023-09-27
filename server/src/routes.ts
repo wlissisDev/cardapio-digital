@@ -1,10 +1,11 @@
-import { Router, Response, Request } from "express";
+import { Router } from "express";
+import { GetAllFoodController } from "./controllers/GetAllFoodController";
+
+const GetAllFood = new GetAllFoodController();
 
 const routes = Router();
 
-routes.get("/food",(request:Request, response:Response)=>{
-    return response.end("ola")
-})
+routes.get("/food",GetAllFood.execute);
 
 
 export {routes}
