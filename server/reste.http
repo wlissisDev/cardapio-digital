@@ -22,3 +22,8 @@ content-type: application/json
     "url": "https://i0.wp.com/pat.feldman.com.br/wp-content/uploads/2012/01/comida-caseira.jpg?fit=960%2C540&ssl=1",
     "price": 25
 }
+
+###
+
+DELETE http://localhost:5000/food/22c8a4eb-a3a4-4bfd-a7c3-de190e1be3c3
+content-type: application/json
