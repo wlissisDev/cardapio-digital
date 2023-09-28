@@ -1,0 +1,13 @@
+GET http://localhost:5000/food
+content-type: application/json
+
+###
+
+POST http://localhost:5000/food
+content-type: application/json
+
+{
+    "name": "hamburguer",
+    "url": "https://i0.wp.com/mercadoeconsumo.com.br/wp-content/uploads/2019/04/Que-comida-saud%C3%A1vel-que-nada-brasileiro-gosta-de-fast-food.jpg?fit=1600%2C1067&ssl=1",
+    "price": 35
+}

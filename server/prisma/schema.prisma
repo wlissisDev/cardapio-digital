@@ -14,5 +14,5 @@ model Food{
   id String @id @default(uuid())
   name String
   url String
-  price String
+  price Int
 }
