@@ -7,7 +7,18 @@ POST http://localhost:5000/food
 content-type: application/json
 
 {
-    "name": "hamburguer",
-    "url": "https://i0.wp.com/mercadoeconsumo.com.br/wp-content/uploads/2019/04/Que-comida-saud%C3%A1vel-que-nada-brasileiro-gosta-de-fast-food.jpg?fit=1600%2C1067&ssl=1",
-    "price": 35
+    "name": "Almoço",
+    "url": "https://i0.wp.com/pat.feldman.com.br/wp-content/uploads/2012/01/comida-caseira.jpg?fit=960%2C540&ssl=1",
+    "price": 20
+}
+
+###
+
+PUT  http://localhost:5000/food/8bbdb541-05ff-4a70-84bc-b9fb925597cd
+content-type: application/json
+
+{
+    "name": "Almoço Editado",
+    "url": "https://i0.wp.com/pat.feldman.com.br/wp-content/uploads/2012/01/comida-caseira.jpg?fit=960%2C540&ssl=1",
+    "price": 25
 }

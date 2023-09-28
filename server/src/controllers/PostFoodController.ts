@@ -9,14 +9,14 @@ class PostFoodController {
             return response.end("dados invalidos");
         }
 
-        const foods = await prismaClient.food.create({
+        await prismaClient.food.create({
             data:{
                 name:name,
                 price:price,
                 url:url
             }
         });
-        return response.json(foods).sendStatus(201);
+        return response.sendStatus(201);
     }
 }
 
