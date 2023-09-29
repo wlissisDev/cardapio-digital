@@ -1,0 +1,32 @@
+.food{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.food img{
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    height: 300px;
+}
+
+.food h3{
+    text-align: center;
+    font-size: 28px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns button{
+    margin: 5px;
+}
+
