@@ -12,10 +12,11 @@ type Foods = {
 
 function App() {
   const { data: repositories, isFetch } = useFetch<Foods[]>("food")
-  console.log(repositories)
+
   return (
     <div className={style.app}>
-      <h1 className={style.title}>Cardapio digital</h1>
+      <h1 className={style.title}>Cardápio digital</h1>
+      <button className={style.btn}>Adicionar item</button>
 
       {isFetch && <span>Carregando cardapio...</span>}
       <ul className={style.list}>
