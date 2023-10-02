@@ -1,9 +1,20 @@
+import { useFetch } from '../../hooks/useFetch'
+import { api } from '../../utils/api'
 import style from './style.module.css'
 
 type Food = {
     url: string,
     name: string,
-    price: number
+    price: number,
+    id: string
+}
+
+function deleteFood(id: string) {
+    api.delete(`/food/${id}`)
+        .then(result => { console.log(result.status) })
+        .catch(err => { console.log(err) })
+
+    window.location.reload()
 }
 
 export function Food(props: Food) {
@@ -15,7 +26,7 @@ export function Food(props: Food) {
                 <span>R$ {props.price}</span>
                 <div>
                     <button>Editar</button>
-                    <button>Excluir</button>
+                    <button onClick={() => deleteFood(props.id)}>Excluir</button>
                 </div>
             </div>
         </li>
