@@ -1,0 +1,14 @@
+.container{
+
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1em;
+}
+
+.addButton{  
+    background: rgb(109, 42, 216);
+    color: white;
+}
