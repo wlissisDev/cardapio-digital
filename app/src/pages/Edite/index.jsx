@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../utils/api";
 import { Link, useNavigate } from "react-router-dom";
+import styles from './styles.module.css'
 
 export function EditeFood() {
 
@@ -36,9 +37,9 @@ export function EditeFood() {
 
     return (
         <div>
-            <h3>Editar { }</h3>
+            <h3>Editar "{name}"</h3>
             <form onSubmit={handlerSubmit} >
-                <div>
+                <div className={styles.input}>
                     <label>Endereço da imagem</label>
                     <input
                         type="text"
@@ -47,7 +48,7 @@ export function EditeFood() {
                         value={url}
                     />
                 </div>
-                <div>
+                <div className={styles.input}>
                     <label>Nome</label>
                     <input
                         type="text"
@@ -56,7 +57,7 @@ export function EditeFood() {
                         value={name}
                     />
                 </div>
-                <div>
+                <div className={styles.input}>
                     <label>Preço</label>
                     <input
                         type="number"
@@ -65,9 +66,9 @@ export function EditeFood() {
                         value={price}
                     />
                 </div>
-                <div>
-                    <button type="submit">Confirmar</button>
-                    <Link to={"/"}>Voltar</Link>
+                <div className={styles.btns}>
+                    <button className={styles.add} type="submit">Confirmar</button>
+                    <Link className={styles.back} to={"/"}>Voltar</Link>
                 </div>
 
             </form>

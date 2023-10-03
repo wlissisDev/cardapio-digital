@@ -1,8 +1,11 @@
-import { Food } from '../../components/Food'
-import { api } from '../../utils/api'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { api } from '../../utils/api'
+import { BiAddToQueue } from 'react-icons/bi'
+import { Food } from '../../components/Food'
 import styles from './styles.module.css'
-import {Link} from 'react-router-dom'
+
+
 export function Foods() {
 
     const [dataFood, setDataFood] = useState();
@@ -24,12 +27,16 @@ export function Foods() {
 
     return (
         <div className={styles.container}>
-            <h1>Cardápio digital <Link className={styles.addButton} to={"/create"}>Add</Link></h1>
-                {isFetch && <span>Carregando dados...</span>}
-                {error && <span>Ops! Dados não encontrado. Recarregue a página e tente novamente.</span>}
+            <h1>Cardápio digital
+                <Link className={styles.addButton} to={"/create"}>
+                    <BiAddToQueue/>
+                </Link>
+            </h1>
+            {isFetch && <span>Carregando dados...</span>}
+            {error && <span>Ops! Dados não encontrado. Recarregue a página e tente novamente.</span>}
             <ul className={styles.list}>
-                {dataFood?.map(item=>{
-                    return(
+                {dataFood?.map(item => {
+                    return (
                         <div key={item.id}>
                             <Food
                                 id={item.id}

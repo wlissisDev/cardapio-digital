@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { api } from '../../utils/api';
+import styles from './styles.module.css';
 
 
 export function Food({ url, name, price, id, setDataFood }) {
@@ -19,15 +20,15 @@ export function Food({ url, name, price, id, setDataFood }) {
     }
 
     return (
-        <li>
-            <img src={url} alt={name} style={{ width: "300px" }} />
+        <li className={styles.food}>
+            <img className={styles.image} src={url} alt={name} />
             <div>
                 <h3>{name}</h3>
-                <div>
+                <div >
                     <span>R$ {price}</span>
-                    <div>
-                        <Link to={`/edite/${id}`}>Editar</Link>
-                        <button onClick={deleteFood}>Excluir</button>
+                    <div className={styles.btns}>
+                        <Link className={styles.edite} to={`/edite/${id}`}>Editar</Link>
+                        <button className={styles.delete} onClick={deleteFood}>Excluir</button>
                     </div>
                 </div>
             </div>

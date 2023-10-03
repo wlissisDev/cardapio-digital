@@ -1,6 +1,7 @@
 import { api } from '../../utils/api'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import styles from './styles.module.css'
 
 export function CreateFood() {
 
@@ -24,36 +25,39 @@ export function CreateFood() {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <h3>Adicione um item ao cardápio</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <div className={styles.input}>
                     <label>Endereço da imagem</label>
                     <input
                         type="text"
+                        required
                         onChange={(e) => setUrl(e.target.value)}
                         value={url}
                     />
                 </div>
-                <div>
+                <div className={styles.input}>
                     <label>Nome</label>
                     <input
                         type="text"
+                        required
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                     />
                 </div>
-                <div>
+                <div className={styles.input}>
                     <label>Preço</label>
                     <input
                         type="number"
+                        required
                         onChange={(e) => setPrice(parseInt(e.target.value))}
                         value={price}
                     />
                 </div>
-                <div>
-                    <button type="submit">Adicionar</button>
-                    <Link to={"/"}>Voltar</Link>
+                <div className={styles.btns}>
+                    <button className={styles.add} type="submit">Adicionar</button>
+                    <Link className={styles.back} to={"/"}>Voltar</Link>
                 </div>
 
             </form>
